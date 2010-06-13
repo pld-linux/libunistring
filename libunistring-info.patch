@@ -1,0 +1,14 @@
+--- libunistring-0.9.3/doc/libunistring.texi.orig	2010-01-01 03:38:36.000000000 +0100
++++ libunistring-0.9.3/doc/libunistring.texi	2010-06-13 18:45:56.154204902 +0200
+@@ -75,9 +75,9 @@
+ @end ifnottex
+ 
+ @ifinfo
+-@dircategory Software development
++@dircategory Libraries:
+ @direntry
+-* GNU libunistring: (libunistring).     Unicode string library.
++* GNU libunistring: (libunistring).	Unicode string library
+ @end direntry
+ @end ifinfo
+ 
