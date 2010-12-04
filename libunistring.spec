@@ -9,7 +9,7 @@ Source0:	http://ftp.gnu.org/gnu/libunistring/%{name}-%{version}.tar.gz
 # Source0-md5:	db8eca3b64163abadf8c40e5cecc261f
 Patch0:		%{name}-info.patch
 URL:		http://gnu.org/software/libunistring/
-BuildRequires:	texinfo
+BuildRequires:	texinfo >= 4.12
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
