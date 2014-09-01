@@ -1,15 +1,17 @@
 Summary:	Unicode string library
 Summary(pl.UTF-8):	Biblioteka do obsługi łańcuchów unikodowych
 Name:		libunistring
-Version:	0.9.3
-Release:	2
+Version:	0.9.4
+Release:	1
 License:	LGPL v3+
 Group:		Libraries
-Source0:	http://ftp.gnu.org/gnu/libunistring/%{name}-%{version}.tar.gz
-# Source0-md5:	db8eca3b64163abadf8c40e5cecc261f
+Source0:	http://ftp.gnu.org/gnu/libunistring/%{name}-%{version}.tar.xz
+# Source0-md5:	995b7783c3da45f3f62f26a7a9af47d1
 Patch0:		%{name}-info.patch
 URL:		http://gnu.org/software/libunistring/
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo >= 4.12
+BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -58,6 +60,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# packaged as %doc in -devel
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/libunistring
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -68,7 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS BUGS ChangeLog NEWS README THANKS
 %attr(755,root,root) %{_libdir}/libunistring.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libunistring.so.0
+%attr(755,root,root) %ghost %{_libdir}/libunistring.so.2
 
 %files devel
 %defattr(644,root,root,755)
