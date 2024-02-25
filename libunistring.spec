@@ -1,12 +1,12 @@
 Summary:	Unicode string library
 Summary(pl.UTF-8):	Biblioteka do obsługi łańcuchów unikodowych
 Name:		libunistring
-Version:	1.1
+Version:	1.2
 Release:	1
 License:	LGPL v3+ or GPL v2+
 Group:		Libraries
 Source0:	https://ftp.gnu.org/gnu/libunistring/%{name}-%{version}.tar.xz
-# Source0-md5:	0dfba19989ae06b8e7a49a7cd18472a1
+# Source0-md5:	6b4ea63617bf09d76e5234379e75e7f9
 Patch0:		%{name}-info.patch
 URL:		http://gnu.org/software/libunistring/
 BuildRequires:	tar >= 1:1.22
