@@ -1,14 +1,15 @@
 Summary:	Unicode string library
 Summary(pl.UTF-8):	Biblioteka do obsługi łańcuchów unikodowych
 Name:		libunistring
-Version:	1.4.1
+Version:	1.4.2
 Release:	1
 License:	LGPL v3+ or GPL v2+
 Group:		Libraries
 Source0:	https://ftp.gnu.org/gnu/libunistring/%{name}-%{version}.tar.xz
-# Source0-md5:	7419fcbca7c0b29d3b218a09a15cbc76
+# Source0-md5:	e033195d90d0803063f3fecc77148124
 Patch0:		%{name}-info.patch
 URL:		http://gnu.org/software/libunistring/
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo >= 4.12
 BuildRequires:	xz
@@ -46,6 +47,18 @@ Static unistring library.
 %description static -l pl.UTF-8
 Statyczna biblioteka unistring.
 
+%package apidocs
+Summary:	API documentation for unistring library
+Summary(pl.UTF-8):	Dokumentacja API biblioteki unistring
+Group:		Documentation
+BuildArch:	noarch
+
+%description apidocs
+API documentation for unistring library.
+
+%description apidocs -l pl.UTF-8
+Dokumentacja API biblioteki unistring.
+
 %prep
 %setup -q
 %patch -P0 -p1
@@ -78,13 +91,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS BUGS ChangeLog NEWS README THANKS
-%attr(755,root,root) %{_libdir}/libunistring.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libunistring.so.5
+%{_libdir}/libunistring.so.*.*.*
+%ghost %{_libdir}/libunistring.so.5
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/*.html
-%attr(755,root,root) %{_libdir}/libunistring.so
+%{_libdir}/libunistring.so
 %{_libdir}/libunistring.la
 %{_includedir}/unistring
 %{_includedir}/uni*.h
@@ -93,3 +105,7 @@ rm -rf $RPM_BUILD_ROOT
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libunistring.a
+
+%files apidocs
+%defattr(644,root,root,755)
+%doc doc/*.html
