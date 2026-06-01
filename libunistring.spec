@@ -27,7 +27,7 @@ do obsługi łańcuchów znaków C zgodnie ze standardem Unicode.
 Summary:	Header files for unistring library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki unistring
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}%{?_isa} = %{version}-%{release}
 
 %description devel
 Header files for unistring library.
@@ -39,7 +39,7 @@ Pliki nagłówkowe biblioteki unistring.
 Summary:	Static unistring library
 Summary(pl.UTF-8):	Statyczna biblioteka unistring
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
+Requires:	%{name}-devel%{?_isa} = %{version}-%{release}
 
 %description static
 Static unistring library.
